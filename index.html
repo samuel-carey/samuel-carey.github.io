@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samuel Carey</title>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:#fff;color:#000;font-family:'Courier Prime',monospace;font-size:16px;line-height:1.8;}
+a{color:#000;text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* HEADER */
+header{
+  position:fixed;top:0;left:0;right:0;
+  display:flex;justify-content:flex-end;align-items:center;
+  padding:32px 64px;
+  background:#fff;
+  z-index:100;
+}
+nav{display:flex;gap:40px;}
+nav a{font-size:12px;text-transform:uppercase;letter-spacing:0.14em;opacity:0.45;transition:opacity 0.15s;}
+nav a:hover{opacity:1;text-decoration:none;}
+
+/* MAIN */
+main{padding-top:120px;}
+section{max-width:720px;margin:0 auto;padding:120px 40px;}
+section+section{border-top:1px solid #e8e8e8;}
+
+/* HERO */
+#hero{max-width:none;margin:0;padding:0;height:calc(100vh - 120px);position:relative;}
+
+.hero-inner{
+  position:absolute;
+  bottom:72px;
+  left:max(64px, calc(50% - 680px));
+  padding-left:40px;
+}
+
+.hero-name{
+  font-size:13px;
+  font-weight:400;
+  text-transform:uppercase;
+  letter-spacing:0.14em;
+  line-height:1.9;
+  opacity:0.38;
+}
+
+/* SECTION LABEL */
+.label{font-size:11px;text-transform:uppercase;letter-spacing:0.18em;opacity:0.3;margin-bottom:52px;}
+
+/* ABOUT */
+.about-text{font-size:18px;line-height:1.85;opacity:0.75;}
+.about-text p+p{margin-top:1.6em;}
+
+/* PUBLICATIONS */
+.pub-list{list-style:none;}
+.pub-item{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:28px 0;border-bottom:1px solid #f0f0f0;}
+.pub-item:first-child{border-top:1px solid #f0f0f0;}
+.pub-year{font-size:11px;opacity:0.25;padding-top:3px;letter-spacing:0.04em;}
+.pub-title{font-size:15px;line-height:1.5;margin-bottom:6px;}
+.pub-venue{font-size:11px;opacity:0.35;text-transform:uppercase;letter-spacing:0.08em;}
+.pub-tag{display:inline;font-size:10px;border:1px solid #ccc;padding:1px 6px;margin-left:8px;letter-spacing:0.06em;text-transform:uppercase;opacity:0.5;vertical-align:middle;}
+
+/* TEACHING */
+.course-list{list-style:none;}
+.course-item{padding:28px 0;border-bottom:1px solid #f0f0f0;}
+.course-item:first-child{border-top:1px solid #f0f0f0;}
+.course-code{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;opacity:0.28;margin-bottom:8px;}
+.course-title{font-size:15px;font-weight:700;margin-bottom:8px;line-height:1.4;}
+.course-desc{font-size:13px;opacity:0.45;line-height:1.9;max-width:520px;}
+
+/* CONFERENCES */
+.conf-list{list-style:none;}
+.conf-item{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid #f0f0f0;}
+.conf-item:first-child{border-top:1px solid #f0f0f0;}
+.conf-year{font-size:11px;opacity:0.25;padding-top:3px;letter-spacing:0.04em;}
+.conf-title{font-size:15px;line-height:1.5;margin-bottom:5px;}
+.conf-event{font-size:11px;opacity:0.35;text-transform:uppercase;letter-spacing:0.08em;}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:120px 1fr;}
+.contact-row{display:contents;}
+.contact-row .c-label{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;opacity:0.28;padding:14px 0;border-bottom:1px solid #f0f0f0;}
+.contact-row .c-value{font-size:14px;padding:14px 0;border-bottom:1px solid #f0f0f0;opacity:0.7;}
+.contact-row:first-child .c-label,
+.contact-row:first-child .c-value{border-top:1px solid #f0f0f0;}
+
+/* FOOTER */
+footer{max-width:720px;margin:0 auto;padding:60px 40px 80px;display:flex;justify-content:space-between;border-top:1px solid #e8e8e8;}
+footer span{font-size:10px;opacity:0.2;text-transform:uppercase;letter-spacing:0.12em;}
+
+/* MOBILE */
+@media(max-width:600px){
+  header{padding:24px 28px;}
+  nav{gap:20px;}
+  nav a{font-size:11px;}
+  section{padding:80px 28px;}
+  .hero-inner{left:28px;padding-left:0;bottom:52px;}
+  footer{padding:40px 28px 60px;}
+  .contact-grid{grid-template-columns:100px 1fr;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#conferences">Conferences</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-name">
+        Samuel Carey<br>
+        PhD Candidate<br>
+        Law &amp; Informatics<br>
+        Stockholm University
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="label">About</div>
+    <div class="about-text">
+      <p>I am a PhD candidate at the Swedish Law and Informatics Research Institute (IRI) at Stockholm University. My working dissertation title is <em>The Reconstruction of Legal Practice</em>.</p>
+      <p>My research sits at the intersection of law, technology, and society. I am interested in how legal practice and legal reasoning are being reconstructed by artificial intelligence — and what this means for the rule of law.</p>
+      <p>I am affiliated with the interdisciplinary research environment WASP-HS and the cluster <em>The Rule of AI — AI, Regulation and Society</em>. I hold an LLM in International Arbitration and an LLB(Hons) from the University of Auckland.</p>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="label">Research &amp; Publications</div>
+    <ul class="pub-list">
+      <li class="pub-item">
+        <span class="pub-year">2026</span>
+        <div>
+          <div class="pub-title">Regulating Uncertainty: Governing General-Purpose AI Models and Systemic Risk</div>
+          <div class="pub-venue">European Journal of Risk Regulation · pp. 1–17</div>
+        </div>
+      </li>
+      <li class="pub-item">
+        <span class="pub-year">2026</span>
+        <div>
+          <div class="pub-title">AI and Legal Methods: Navigating the Frontier <span class="pub-tag">edited volume</span></div>
+          <div class="pub-venue">Jure</div>
+        </div>
+      </li>
+      <li class="pub-item">
+        <span class="pub-year">2017</span>
+        <div>
+          <div class="pub-title">Mediation Proceedings 2003–2017</div>
+          <div class="pub-venue">SCC Practice Note · Arbitration Institute of the Stockholm Chamber of Commerce</div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- TEACHING -->
+  <section id="teaching">
+    <div class="label">Teaching</div>
+    <ul class="course-list">
+      <li class="course-item">
+        <div class="course-code">Stockholm University · 2021–present</div>
+        <div class="course-title">Teaching Assistant</div>
+        <div class="course-desc">Information and technology law, jurisprudence and legal theory, maritime transportation law. Supervision of multiple master's level independent research projects.</div>
+      </li>
+      <li class="course-item">
+        <div class="course-code">Stockholm University · Aug–Dec 2018</div>
+        <div class="course-title">Guest Lecturer</div>
+        <div class="course-desc">Organised and facilitated the mock trial in International Commercial Dispute Resolution.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- CONFERENCES -->
+  <section id="conferences">
+    <div class="label">Conferences &amp; Talks</div>
+    <ul class="conf-list">
+      <li class="conf-item">
+        <span class="conf-year">2026</span>
+        <div>
+          <div class="conf-title">On the private construction of systemic risk</div>
+          <div class="conf-event">Critical Legal Conference · University of Westminster, London</div>
+        </div>
+      </li>
+      <li class="conf-item">
+        <span class="conf-year">2026</span>
+        <div>
+          <div class="conf-title">Legal Infrastructures</div>
+          <div class="conf-event">Automation and the Future of Legal Reasoning: A Symposium in Honour of Professor Peter Wahlgren · Stockholm</div>
+        </div>
+      </li>
+      <li class="conf-item">
+        <span class="conf-year">2026</span>
+        <div>
+          <div class="conf-title">On the private construction of systemic risk: how private power crystallizes public risk</div>
+          <div class="conf-event">Socio-Legal Studies Association Annual Conference · University of Brighton</div>
+        </div>
+      </li>
+      <li class="conf-item">
+        <span class="conf-year">2026</span>
+        <div>
+          <div class="conf-title">En bransch i förändring — advokat eller jurist i en ny era? <span class="pub-tag">panellist</span></div>
+          <div class="conf-event">Uppsala Alumnidagen · Uppsala</div>
+        </div>
+      </li>
+      <li class="conf-item">
+        <span class="conf-year">2025</span>
+        <div>
+          <div class="conf-title">Regulating Uncertainty: Governing General-Purpose Models and Systemic Risk</div>
+          <div class="conf-event">Socio-Legal Studies Association Annual Conference · Liverpool</div>
+        </div>
+      </li>
+      <li class="conf-item">
+        <span class="conf-year">2024</span>
+        <div>
+          <div class="conf-title">The Reconstruction of Legal Practice: Empirical Study of Lawyers and AI Technology</div>
+          <div class="conf-event">XXXVIII Nordic Conference on Law and Information Technology · Stockholm</div>
+        </div>
+      </li>
+      <li class="conf-item">
+        <span class="conf-year">2021</span>
+        <div>
+          <div class="conf-title">Fully Automated Courts: Artificial Intelligence and the Future of the Rule of Law</div>
+          <div class="conf-event">XXXVI Nordic Conference on Law and Information Technology · Oslo</div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="label">Contact</div>
+    <div class="contact-grid">
+      <div class="contact-row">
+        <span class="c-label">Email</span>
+        <span class="c-value"><a href="mailto:samuel.carey@juridicum.su.se">samuel.carey@juridicum.su.se</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="c-label">Institution</span>
+        <span class="c-value">Swedish Law and Informatics Research Institute (IRI)<br>Stockholm University</span>
+      </div>
+      <div class="contact-row">
+        <span class="c-label">Phone</span>
+        <span class="c-value">+46 7 69134409</span>
+      </div>
+      <div class="contact-row">
+        <span class="c-label">Office</span>
+        <span class="c-value">By appointment</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>Samuel Carey</span>
+  <span>© 2026</span>
+</footer>
+
+</body>
+</html>
